@@ -23,3 +23,12 @@ The system includes specialized tables for:
 1. Clone the repository.
 2. Import the `proyecto_final_estructura.sql` file into your MySQL/MariaDB server.
 3. Explore the relationships and sample queries.
+
+## 📈 Example Query: Tournament Leaderboard
+-- This query retrieves the top teams based on successful submissions
+SELECT e.nombre_equipo, COUNT(env.ID_problema) AS problems_solved
+FROM equipo e
+JOIN enviae env ON e.ID_equipo = env.ID_equipo
+WHERE env.resultado = 'Accepted'
+GROUP BY e.nombre_equipo
+ORDER BY problems_solved DESC;
