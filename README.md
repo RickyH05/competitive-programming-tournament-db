@@ -32,3 +32,6 @@ JOIN enviae env ON e.ID_equipo = env.ID_equipo
 WHERE env.resultado = 'Accepted'
 GROUP BY e.nombre_equipo
 ORDER BY problems_solved DESC;
+
+## 🗺️ Entity-Relationship Diagram (ERD)
+![Diagrama Entidad Relación](./assets/Proyecto_Final.drawio.png)
